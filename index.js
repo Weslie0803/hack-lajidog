@@ -41,8 +41,8 @@ $(document).ready(function () {
   var getRandomNum = function (usedNum, minNum, maxNum, size) {
     var randomNum = Math.round(Math.random() * (maxNum - minNum + 1) + minNum-0.5);
     
-    while(Math.floor(randomNum/10)-randomNum%10 == 0)
-      randomNum = Math.round(Math.random() * (maxNum - minNum + 1) + minNum-0.5);
+    // while(Math.floor(randomNum/10)-randomNum%10 == 0)
+    //   randomNum = Math.round(Math.random() * (maxNum - minNum + 1) + minNum-0.5);
     usedNum.push(randomNum);
     var str = randomNum.toString();
     while (str.length < size) str = '0' + str;
