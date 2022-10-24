@@ -794,7 +794,7 @@ body {
 }
 
 .showNum {
-    height: 200px;
+    height: 400px;
     border: 1px solid #fff;
     border-radius: 12px;
     box-sizing: border-box;
@@ -810,7 +810,8 @@ body {
 
 .row {
     margin-right: 0;
-    margin-left: 0
+    margin-left: 0;
+    margin-top: 15%
 }
 
 body {

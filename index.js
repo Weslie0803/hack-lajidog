@@ -12,15 +12,25 @@ $(document).ready(function () {
     const url = new URL(window.location.href);
     var minNum = 1, maxNum = 999, size = 4, hasBackground = false, cardBackground = false, showMode = 0;
 
-    minNum = parseInt(url.searchParams.get("min") || "1");
-    maxNum = parseInt(url.searchParams.get("max") || "999");
-	if (maxNum<1000)
-	{
-		$("#num4").parent().remove();
-		$(".col-xs-4").css("width","33.33333333%");
-		size=3;
-	}
-	else size = 4;
+    minNum = parseInt(url.searchParams.get("min") || "0");
+    maxNum = parseInt(url.searchParams.get("max") || "99");
+    if (maxNum<1000) {
+      $("#num4").parent().remove();
+      $(".col-xs-4").css("width","33.33333333%");
+      size=3;
+      if (maxNum < 100) {
+        $("#num3").parent().remove();
+        $(".col-xs-4").css("width", "50%");
+        size=2;
+        if (maxNum<10) {
+          $("#num2").parent().remove();
+          $(".col-xs-4").css("width", "100%");
+          $(".container").css("max-width", "400px");
+          size=1;
+        }
+      }
+    }
+    else size = 4;
     const customBackground = url.searchParams.get("bg_url");
     cardBackground = false;
     showMode = 1;
