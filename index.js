@@ -129,11 +129,41 @@ $(document).ready(function () {
   if (config[4])
     addCardBackground();
 
-  // Lottery
+  var toggleThirdPrize = function () {
+    //TODO
+  }
+  var toggleSecondPrize = function(){
+    //TODO
+  }
+  var toggleFirstPrize = function(){
+    //TODO
+  }
+  var toggleSpecialPrize = function(){
+    //TODO
+  }
+    // Lottery
   var usedArr = [];
   var numArr = getRandomNum(usedArr, config[0], config[1], config[2]);
   var pressTimes = 0, preNum = 0;
+  var prize = 3;
   $('body').keydown(function (event) {
+    if (event.which === 51) {// press key 3
+      prize = 3;
+      toggleThirdPrize();
+      pressTimes = 0;
+    } else if(event.which === 50) {// press key 2
+      prize = 2;
+      toggleSecondPrize();
+      pressTimes = 0;
+    } else if(event.which === 49) {// press key 1
+      prize = 1;
+      toggleFirstPrize();
+      pressTimes = 0;
+    } else if(event.which === 48) {// press key 0
+      prize = 0;
+      toggleSpecialPrize();
+      pressTimes = 0;
+    }
     if (config[5] === 0) {
       if (event.which === 32) {
         if (pressTimes < numArr.length) {
@@ -147,17 +177,63 @@ $(document).ready(function () {
         }
       }
     } else if (config[5] === 1) {
-      if (event.which === 32 && pressTimes === 0) {
-        toggleShape();
-        pressTimes++;
-      } else if (event.which === 32 && pressTimes === 1) {
-        toggleShape();
-        showNumOnce(numArr);
-        pressTimes++;
-      } else if (event.which === 32 && pressTimes === 2) {
-        clearNum(numArr);
-        numArr = getRandomNum(usedArr, config[0], config[1], config[2]);
-        pressTimes = 0;
+      if (prize === -1){
+        if (event.which === 32 && pressTimes === 0) {
+          toggleShape();
+          pressTimes++;
+        } else if (event.which === 32 && pressTimes === 1) {
+          toggleShape();
+          showNumOnce(numArr);
+          pressTimes++;
+        } else if (event.which === 32 && pressTimes === 2) {
+          clearNum(numArr);
+          numArr = getRandomNum(usedArr, config[0], config[1], config[2]);
+          pressTimes = 0;
+        }
+      } else if(prize === 3){
+        if(event.which === 32 && pressTimes === 0){
+          // 开始闪动
+          pressTimes++;
+        } else if(event.which === 32 && pressTimes === 1){
+          // 抽出数字
+          pressTimes++;
+        } else if(event.which === 32 && pressTimes === 2){
+          // 清空，重置
+          pressTimes = 0;
+        }
+      } else if(prize === 2){
+        if(event.which === 32 && pressTimes === 0){
+          // 开始闪动
+          pressTimes ++;
+        } else if(event.which === 32 && pressTimes === 1) {
+          // 抽出家族、数字
+          pressTimes++;
+        } else if(event.which === 32 && pressTimes === 2) {
+          // 清空，重置
+          pressTimes = 0;
+        }
+      } else if(prize === 1){
+        if(event.which === 32 && pressTimes === 0){
+          // 开始闪动
+          pressTimes ++;
+        } else if(event.which === 32 && pressTimes === 1) {
+          // 一分为四
+          pressTimes++;
+        } else if(event.which === 32 && pressTimes === 2) {
+          // 清空，重置
+          pressTimes = 0;
+        }
+      } else if(prize === 0){
+        if(event.which === 32 && pressTimes === 0){
+          // 开始闪动
+          pressTimes++;
+        } else if(event.which === 32 && pressTimes === 1){
+          // 抽出全部
+          pressTimes++;
+        } else if(event.which === 32 && pressTimes === 2){
+          // 清空，重置
+          pressTimes = 0;
+        }
       }
     }
   })
