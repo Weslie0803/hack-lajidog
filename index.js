@@ -13,10 +13,10 @@ $(document).ready(function () {
     var minNum = 1, maxNum = 999, size = 4, hasBackground = false, cardBackground = false, showMode = 0;
 
     minNum = parseInt(url.searchParams.get("min") || "0");
-    maxNum = parseInt(url.searchParams.get("max") || "99");
+    maxNum = parseInt(url.searchParams.get("max") || "779");
     if (maxNum<1000) {
       $("#num4").parent().remove();
-      $(".col-xs-4").css("width","33.33333333%");
+      $(".col-xs-4").css("width","50%");
       size=3;
       if (maxNum < 100) {
         $("#num3").parent().remove();
@@ -48,12 +48,19 @@ $(document).ready(function () {
   };
 
   // Get a random number, and return as a string array
+  // 三等奖：抽一个数0~9
+  // 二等奖：先抽取4大家族之一（0~3），再抽一个数
+  // 一等奖：抽取键合奇偶（0~1），抽颜色（0~7），抽数
+  // 特等奖：抽键合（0~7），抽颜色（0~7），抽数（0~9）
+  // 因此，仍然抽一个三位数，自高位到低位分别是键合、颜色、数
   var getRandomNum = function (usedNum, minNum, maxNum, size) {
+    //0~779，且十位不能大于7
     var randomNum = Math.round(Math.random() * (maxNum - minNum + 1) + minNum-0.5);
     
-    // while(Math.floor(randomNum/10)-randomNum%10 == 0)
-    //   randomNum = Math.round(Math.random() * (maxNum - minNum + 1) + minNum-0.5);
-    usedNum.push(randomNum);
+    while(randomNum%100 > 79)
+      randomNum = Math.round(Math.random() * (maxNum - minNum + 1) + minNum-0.5);
+    
+      usedNum.push(randomNum);
     var str = randomNum.toString();
     while (str.length < size) str = '0' + str;
     //str = str.substr(0,1) + '&' + str.substr(1,1);
@@ -129,17 +136,17 @@ $(document).ready(function () {
   if (config[4])
     addCardBackground();
 
-  var toggleThirdPrize = function () {
-    //TODO
+  var toggleSingleFrame = function () {
+    $("#num3").parent().remove();
+    $("#num2").css("display", "none");
+    $(".col-xs-4").css("width", "100%");
+    $(".container").css("max-width", "380px");
   }
-  var toggleSecondPrize = function(){
-    //TODO
-  }
-  var toggleFirstPrize = function(){
-    //TODO
-  }
-  var toggleSpecialPrize = function(){
-    //TODO
+  var toggleDoubleFrame = function(){
+    $("#num3").parent().remove();
+    $("#num2").css("display", "inherit");
+    $(".container").css("max-width", "730px");
+    $(".col-xs-4").css("width", "50%");
   }
     // Lottery
   var usedArr = [];
@@ -149,19 +156,19 @@ $(document).ready(function () {
   $('body').keydown(function (event) {
     if (event.which === 51) {// press key 3
       prize = 3;
-      toggleThirdPrize();
+      toggleSingleFrame();
       pressTimes = 0;
     } else if(event.which === 50) {// press key 2
       prize = 2;
-      toggleSecondPrize();
+      toggleDoubleFrame();
       pressTimes = 0;
     } else if(event.which === 49) {// press key 1
       prize = 1;
-      toggleFirstPrize();
+      toggleSingleFrame();
       pressTimes = 0;
     } else if(event.which === 48) {// press key 0
       prize = 0;
-      toggleSpecialPrize();
+      toggleSingleFrame();
       pressTimes = 0;
     }
     if (config[5] === 0) {
@@ -192,34 +199,28 @@ $(document).ready(function () {
         }
       } else if(prize === 3){
         if(event.which === 32 && pressTimes === 0){
-          // 开始闪动
-          pressTimes++;
-        } else if(event.which === 32 && pressTimes === 1){
           // 抽出数字
           pressTimes++;
-        } else if(event.which === 32 && pressTimes === 2){
-          // 清空，重置
+        } else if(event.which === 32 && pressTimes === 1){
+          // 重置
           pressTimes = 0;
         }
       } else if(prize === 2){
         if(event.which === 32 && pressTimes === 0){
-          // 开始闪动
+          // 抽出家族
           pressTimes ++;
         } else if(event.which === 32 && pressTimes === 1) {
-          // 抽出家族、数字
+          // 抽出数字
           pressTimes++;
         } else if(event.which === 32 && pressTimes === 2) {
-          // 清空，重置
+          // 重置
           pressTimes = 0;
         }
       } else if(prize === 1){
         if(event.which === 32 && pressTimes === 0){
-          // 开始闪动
-          pressTimes ++;
-        } else if(event.which === 32 && pressTimes === 1) {
           // 一分为四
           pressTimes++;
-        } else if(event.which === 32 && pressTimes === 2) {
+        } else if(event.which === 32 && pressTimes === 1) {
           // 清空，重置
           pressTimes = 0;
         }
