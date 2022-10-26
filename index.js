@@ -141,6 +141,7 @@ $(document).ready(function () {
     $("#num2").css("display", "none");
     $(".col-xs-4").css("width", "100%");
     $(".container").css("max-width", "380px");
+    $(".showNum").toggleClass("numUndicided");
   }
   var toggleDoubleFrame = function(){
     $("#num3").parent().remove();
