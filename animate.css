@@ -1,0 +1,113 @@
+
+.CardRolling {
+    position: absolute;
+    overflow: hidden;
+    width: 290px;
+    height: 580px;
+    /* display: none; */
+}
+.NumRolling {
+    position: absolute;
+    overflow: hidden;
+    width: 290px;
+    height: 580px;
+}
+.CardRolling>ul li {
+    /* float: left; */
+    width: 290px;
+    height: 580px;
+}
+.NumRolling>ul li {
+    list-style-type: none;
+    float: left;
+    width: 290px;
+    height: 580px;
+}
+.CardRolling>ul li img{
+    width: 100%;
+    height: 100%;
+}
+.NumRolling>ul li img{
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    margin-top: 30%;
+    text-align: center;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+@keyframes runY {
+    to {
+        transform: translateY(-4640px);
+    }
+}
+@keyframes runX {
+    to {
+        transform: translateX(-2900px);
+    }
+}
+.CardRolling>ul {
+    animation: runY 3s linear infinite;
+    padding-left: 0px ;
+}
+.NumRolling>ul {
+    animation: runX 3s linear infinite;
+    padding-left: 0px ;
+    width: 3190px;
+}
+
+@keyframes CardFlash {
+    12.5% {
+        background: url(抽奖软件UI/底色/复合/复合1.png);
+    }
+    25% {
+        background: url(抽奖软件UI/底色/复合/复合2.png);
+    }
+    37.5% {
+        background: url(抽奖软件UI/底色/金属/金属1.png);
+    }
+    50% {
+        background: url(抽奖软件UI/底色/金属/金属2.png);
+    }
+    62.5% {
+        background: url(抽奖软件UI/底色/非金/非金1.png);
+    }
+    75% {
+        background: url(抽奖软件UI/底色/非金/非金2.png);
+    }
+    87.5% {
+        background: url(抽奖软件UI/底色/高分子/高分子1.png);
+    }
+    100% {
+        background: url(抽奖软件UI/底色/高分子/高分子2.png);
+    }
+}
+
+@keyframes BondFlash {
+    12.5% {
+        background: url(抽奖软件UI/键和方式/1-H2.png);
+    }
+    25% {
+        background: url(抽奖软件UI/键和方式/2-水.png);
+    }
+    37.5% {
+        background: url(抽奖软件UI/键和方式/3-乙炔.png);
+    }
+    50% {
+        background: url(抽奖软件UI/键和方式/4-正四面体.png);
+    }
+    62.5% {
+        background: url(抽奖软件UI/键和方式/5-石墨.png);
+    }
+    75% {
+        background: url(抽奖软件UI/键和方式/6-丙炔.png);
+    }
+    87.5% {
+        background: url(抽奖软件UI/键和方式/7-简单立方.png);
+    }
+    100% {
+        background: url(抽奖软件UI/键和方式/8-BCC.png);
+    }
+}
