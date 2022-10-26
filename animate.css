@@ -12,12 +12,24 @@
     width: 290px;
     height: 580px;
 }
+.BondRolling {
+    position: absolute;
+    overflow: hidden;
+    width: 290px;
+    height: 580px;
+}
 .CardRolling>ul li {
     /* float: left; */
     width: 290px;
     height: 580px;
 }
 .NumRolling>ul li {
+    list-style-type: none;
+    float: left;
+    width: 290px;
+    height: 580px;
+}
+.BondRolling>ul li {
     list-style-type: none;
     float: left;
     width: 290px;
@@ -38,6 +50,13 @@
     top: 0px;
     bottom: 0px;
 }
+.BondRolling>ul li img{
+    max-width: 50px;
+    max-height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: block;
+}
 @keyframes runY {
     to {
         transform: translateY(-4640px);
@@ -49,13 +68,17 @@
     }
 }
 .CardRolling>ul {
-    animation: runY 3s linear infinite;
+    /* animation: runY 3s linear infinite; */
     padding-left: 0px ;
 }
 .NumRolling>ul {
     animation: runX 3s linear infinite;
     padding-left: 0px ;
     width: 3190px;
+}
+.BondRolling>ul {
+    animation: runY 3s linear infinite;
+    padding-left: 0px ;
 }
 
 @keyframes CardFlash {
@@ -110,4 +133,49 @@
     100% {
         background: url(抽奖软件UI/键和方式/8-BCC.png);
     }
+}
+
+@keyframes NumFlash {
+    0% {
+        background: url(抽奖软件UI/数字/0.png);
+    }
+    10% {
+        background: url(抽奖软件UI/数字/1.png);
+    }
+    20% {
+        background: url(抽奖软件UI/数字/2.png);
+    }
+    30% {
+        background: url(抽奖软件UI/数字/3.png);
+    }
+    40% {
+        background: url(抽奖软件UI/数字/4.png);
+    }
+    50% {
+        background: url(抽奖软件UI/数字/5.png);
+    }
+    60% {
+        background: url(抽奖软件UI/数字/6.png);
+    }
+    70% {
+        background: url(抽奖软件UI/数字/7.png);
+    }
+    80% {
+        background: url(抽奖软件UI/数字/8.png);
+    }
+    90% {
+        background: url(抽奖软件UI/数字/9.png);
+    }
+}
+
+.CardUndefined {
+    animation: CardFlash 2s linear infinite;
+}
+
+.NumUndefined {
+    animation: NumFlash 2s linear infinite;
+}
+
+.BondUndefined {
+    animation: BondFlash 2s linear infinite;
 }
