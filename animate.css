@@ -72,12 +72,12 @@
     padding-left: 0px ;
 }
 .NumRolling>ul {
-    animation: runX 3s linear infinite;
+    /* animation: runX 3s linear infinite; */
     padding-left: 0px ;
     width: 3190px;
 }
 .BondRolling>ul {
-    animation: runY 3s linear infinite;
+    /* animation: runY 3s linear infinite; */
     padding-left: 0px ;
 }
 
