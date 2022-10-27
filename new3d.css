@@ -1,0 +1,24 @@
+.ring8>.eine {
+    transform: translateZ(250px);
+}
+.ring8>.zwei {
+    transform: rotateY(45deg) translateZ(250px);
+}
+.ring8>.drei {
+    transform: rotateY(90deg) translateZ(250px);
+}
+.ring8>.viel {
+    transform: rotateY(135deg) translateZ(250px);
+}
+.ring8>.funf {
+    transform: rotateY(180deg) translateZ(250px);
+}
+.ring8>.sechs {
+    transform: rotateY(225deg) translateZ(250px);
+}
+.ring8>.seben {
+    transform: rotateY(270deg) translateZ(250px);
+}
+.ring8>.acht {
+    transform: rotateY(315deg) translateZ(250px);
+}
