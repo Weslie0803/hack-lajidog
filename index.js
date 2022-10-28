@@ -149,6 +149,10 @@ $(document).ready(function () {
     $(".container").css("max-width", "730px");
     $(".col-xs-4").css("width", "50%");
   }
+  var toggleThirdPrize = function () {
+    $(".row").css("display", "none");
+    //TODO
+  }
     // Lottery
   var usedArr = [];
   var numArr = getRandomNum(usedArr, config[0], config[1], config[2]);
@@ -157,19 +161,19 @@ $(document).ready(function () {
   $('body').keydown(function (event) {
     if (event.which === 51) {// press key 3
       prize = 3;
-      toggleSingleFrame();
+      toggleThirdPrize();
       pressTimes = 0;
     } else if(event.which === 50) {// press key 2
       prize = 2;
-      toggleDoubleFrame();
+      toggleSecondPrize();
       pressTimes = 0;
     } else if(event.which === 49) {// press key 1
       prize = 1;
-      toggleSingleFrame();
+      toggleFirstPrize();
       pressTimes = 0;
     } else if(event.which === 48) {// press key 0
       prize = 0;
-      toggleSingleFrame();
+      toggleSpecialPrize();
       pressTimes = 0;
     }
     if (config[5] === 0) {
@@ -200,6 +204,7 @@ $(document).ready(function () {
         }
       } else if(prize === 3){
         if(event.which === 32 && pressTimes === 0){
+          // 旋转变形
           // 抽出数字
           pressTimes++;
         } else if(event.which === 32 && pressTimes === 1){
