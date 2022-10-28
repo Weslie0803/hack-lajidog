@@ -100,11 +100,14 @@ body {
 }
 
 #container {
+    /* position: absolute;
+    left:0;right:0;top:0;bottom:0;margin:auto; */
     perspective: 800px;
     perspective-origin: 50% 225px
 }
 
 #stage {
+    position: absolute;
     width: 100%;
     height: 500px;
     transition: transform 2s;
@@ -135,6 +138,7 @@ body {
     font-size: 110pt;
     color: #000;
     background-color: hsla(0,0%,100%,.6);
+    /* background-color: transparent; */
     transition: transform 2s,opacity 2s;
     backface-visibility: hidden
 }
