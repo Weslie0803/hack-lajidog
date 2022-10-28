@@ -27,29 +27,57 @@
     max-width: 200px;
     max-height: 400px;
 }
-
 .ring8card>.eine {
-    transform: translateZ(500px);
+    transform: translateZ(300px);
 }
 .ring8card>.zwei {
-    transform: rotateY(45deg) translateZ(500px);
+    transform: rotateY(45deg) translateZ(300px);
 }
 .ring8card>.drei {
-    transform: rotateY(90deg) translateZ(500px);
+    transform: rotateY(90deg) translateZ(300px);
 }
 .ring8card>.viel {
-    transform: rotateY(135deg) translateZ(500px);
+    transform: rotateY(135deg) translateZ(300px);
 }
 .ring8card>.funf {
-    transform: rotateY(180deg) translateZ(500px);
+    transform: rotateY(180deg) translateZ(300px);
 }
 .ring8card>.sechs {
-    transform: rotateY(225deg) translateZ(500px);
+    transform: rotateY(225deg) translateZ(300px);
 }
 .ring8card>.seben {
-    transform: rotateY(270deg) translateZ(500px);
+    transform: rotateY(270deg) translateZ(300px);
 }
 .ring8card>.acht {
+    transform: rotateY(315deg) translateZ(300px);
+}
+
+.ring8card2>.plane img {
+    max-width: 200px;
+    max-height: 400px;
+}
+.ring8card2>.eine {
+    transform: translateZ(500px);
+}
+.ring8card2>.zwei {
+    transform: rotateY(45deg) translateZ(500px);
+}
+.ring8card2>.drei {
+    transform: rotateY(90deg) translateZ(500px);
+}
+.ring8card2>.viel {
+    transform: rotateY(135deg) translateZ(500px);
+}
+.ring8card2>.funf {
+    transform: rotateY(180deg) translateZ(500px);
+}
+.ring8card2>.sechs {
+    transform: rotateY(225deg) translateZ(500px);
+}
+.ring8card2>.seben {
+    transform: rotateY(270deg) translateZ(500px);
+}
+.ring8card2>.acht {
     transform: rotateY(315deg) translateZ(500px);
 }
 

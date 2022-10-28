@@ -151,6 +151,8 @@ $(document).ready(function () {
   }
   var toggleThirdPrize = function () {
     $(".row").css("display", "none");
+    $("#result").css("display", "none");
+    $("#result").css("transform", "translateZ(-500px)");
     //TODO
   }
     // Lottery
@@ -205,10 +207,15 @@ $(document).ready(function () {
       } else if(prize === 3){
         if(event.which === 32 && pressTimes === 0){
           // 旋转变形
-          // 抽出数字
+          toggleExpand();
           pressTimes++;
         } else if(event.which === 32 && pressTimes === 1){
+          // 抽出数字
+          toggleResult(numArr[2])
+          pressTimes++;
+        } else if(event.which === 32 && pressTimes === 2){
           // 重置
+          toggleThirdPrize();
           pressTimes = 0;
         }
       } else if(prize === 2){
@@ -220,6 +227,7 @@ $(document).ready(function () {
           pressTimes++;
         } else if(event.which === 32 && pressTimes === 2) {
           // 重置
+          toggleSecondPrize();
           pressTimes = 0;
         }
       } else if(prize === 1){
@@ -228,6 +236,7 @@ $(document).ready(function () {
           pressTimes++;
         } else if(event.which === 32 && pressTimes === 1) {
           // 清空，重置
+          toggleFirstPrize();
           pressTimes = 0;
         }
       } else if(prize === 0){
@@ -239,6 +248,7 @@ $(document).ready(function () {
           pressTimes++;
         } else if(event.which === 32 && pressTimes === 2){
           // 清空，重置
+          toggleSpecialPrize();
           pressTimes = 0;
         }
       }
