@@ -149,12 +149,6 @@ $(document).ready(function () {
     $(".container").css("max-width", "730px");
     $(".col-xs-4").css("width", "50%");
   }
-  var toggleThirdPrize = function () {
-    $(".row").css("display", "none");
-    $("#result").css("display", "none");
-    $("#result").css("transform", "translateZ(-500px)");
-    //TODO
-  }
     // Lottery
   var usedArr = [];
   var numArr = getRandomNum(usedArr, config[0], config[1], config[2]);
@@ -215,7 +209,10 @@ $(document).ready(function () {
           pressTimes++;
         } else if(event.which === 32 && pressTimes === 2){
           // 重置
+          toggleExpand();
           toggleThirdPrize();
+          clearNum(numArr);
+          numArr = getRandomNum(usedArr, config[0], config[1], config[2]);
           pressTimes = 0;
         }
       } else if(prize === 2){
