@@ -250,8 +250,50 @@
     height: 580px;
     position: absolute;
 }
+#result11 {
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    left: -350px;
+    width: 320px;
+    height: 580px;
+    position: absolute;
+}
+#result12 {
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    left: 15px;
+    width: 320px;
+    height: 580px;
+    position: absolute;
+}
+#result13 {
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    right: 15px;
+    width: 320px;
+    height: 580px;
+    position: absolute;
+}
+#result14 {
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    right: -350px;
+    width: 320px;
+    height: 580px;
+    position: absolute;
+}
 
 #result>.CardUndefined>img {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
+    max-width: 150px;
+    max-height: 150px;
+}
+img.prize1 {
     position: absolute;
     margin: auto;
     left: 0;
@@ -273,6 +315,16 @@
     position: absolute;
     width: 50px;
     height: 50px;
+}
+.bondbg>img {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
+    max-width: 50px;
+    max-height: 50px;
 }
 
 .lefttop {
@@ -303,4 +355,38 @@
 .ring82>.plane {
     height: 150px;
     width: 150px
+}
+
+.col-xs-4>.showNum {
+    height: 320px;
+}
+
+#num1>ul li {
+    position: relative;
+    list-style-type: none;
+    float: left;
+    width: 60px;
+    height: 60px;
+}
+#num1>ul {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    height:240px;
+    padding-left: 0;
+}
+#num1>ul li >img {
+    max-width: 50px;
+    max-height: 50px;
+    /* display: block; */
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
 }

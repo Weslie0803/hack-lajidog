@@ -841,7 +841,8 @@ body {
 .row {
     margin-right: 0;
     margin-left: 0;
-    margin-top: 50px;
+    margin-top: 400px;
+    transition: transform 2s;
 }
 
 body {

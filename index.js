@@ -16,7 +16,7 @@ $(document).ready(function () {
     maxNum = parseInt(url.searchParams.get("max") || "779");
     if (maxNum<1000) {
       $("#num4").parent().remove();
-      $(".col-xs-4").css("width","50%");
+      $(".col-xs-4").css("width","33.333333333%");
       size=3;
       if (maxNum < 100) {
         $("#num3").parent().remove();
@@ -211,7 +211,6 @@ $(document).ready(function () {
           // 重置
           toggleExpand();
           toggleThirdPrize();
-          clearNum(numArr);
           numArr = getRandomNum(usedArr, config[0], config[1], config[2]);
           pressTimes = 0;
         }
@@ -265,7 +264,6 @@ $(document).ready(function () {
           // 重置
           $("#result1").toggleClass("jumpDown");
           $("#result2").toggleClass("jumpDown");
-          clearNum(numArr);
           numArr = getRandomNum(usedArr, config[0], config[1], config[2]);
           toggleSecondPrize();
           pressTimes = 0;
@@ -273,27 +271,126 @@ $(document).ready(function () {
       } else if(prize === 1){
         if(event.which === 32 && pressTimes === 0){
           // 扩张，出现卡池
+          toggleExpand();
+          $(".row").css("transform", "translateY(0px)");
+          $("#bg0").parent().parent().css("transform", "translateY(-100px) translateZ(-500px)");
+          $("#bond0").parent().parent().css("transform", "translateY(-100px) translateZ(-500px) rotateZ(45deg)");
+          $("#card0").parent().parent().css("transform", "translateY(-100px) translateZ(-760px)");
           pressTimes++;
         } else if(event.which === 32 && pressTimes === 1) {
           // 抽键合奇偶
+          if(numArr[0] % 2 === 0){// 偶数
+            $("#br1").attr("src", "抽奖软件UI/键和方式/2-水.png");
+            $("#b11l").attr("src", "抽奖软件UI/键和方式/2-水.png");
+            $("#b11r").attr("src", "抽奖软件UI/键和方式/2-水.png");
+            $("#br2").attr("src", "抽奖软件UI/键和方式/4-正四面体.png");
+            $("#b12l").attr("src", "抽奖软件UI/键和方式/4-正四面体.png");
+            $("#b12r").attr("src", "抽奖软件UI/键和方式/4-正四面体.png");
+            $("#br3").attr("src", "抽奖软件UI/键和方式/6-丙炔.png");
+            $("#b13l").attr("src", "抽奖软件UI/键和方式/6-丙炔.png");
+            $("#b13r").attr("src", "抽奖软件UI/键和方式/6-丙炔.png");
+            $("#br4").attr("src", "抽奖软件UI/键和方式/8-BCC.png");
+            $("#b14l").attr("src", "抽奖软件UI/键和方式/8-BCC.png");
+            $("#b14r").attr("src", "抽奖软件UI/键和方式/8-BCC.png");
+          } else {
+            $("#br1").attr("src", "抽奖软件UI/键和方式/1-H2.png");
+            $("#b11l").attr("src", "抽奖软件UI/键和方式/1-H2.png");
+            $("#b11r").attr("src", "抽奖软件UI/键和方式/1-H2.png");
+            $("#br2").attr("src", "抽奖软件UI/键和方式/3-乙炔.png");
+            $("#b12l").attr("src", "抽奖软件UI/键和方式/3-乙炔.png");
+            $("#b12r").attr("src", "抽奖软件UI/键和方式/3-乙炔.png");
+            $("#br3").attr("src", "抽奖软件UI/键和方式/5-石墨.png");
+            $("#b13l").attr("src", "抽奖软件UI/键和方式/5-石墨.png");
+            $("#b13r").attr("src", "抽奖软件UI/键和方式/5-石墨.png");
+            $("#br4").attr("src", "抽奖软件UI/键和方式/7-简单立方.png");
+            $("#b14l").attr("src", "抽奖软件UI/键和方式/7-简单立方.png");
+            $("#b14r").attr("src", "抽奖软件UI/键和方式/7-简单立方.png");
+          }
+          $("#num1").toggleClass("jumpDown");
+          pressTimes++;
         } else if(event.which === 32 && pressTimes === 2) {
           // 抽底色
+          if(numArr[1] === '0'){
+            $("#num2").css("background-image", "url(抽奖软件UI/底色/金属/金属1.png)");
+            $("#result11").parent().children().children(".showNum").css("background-image", "url(抽奖软件UI/底色/金属/金属1.png)");
+            // $("#num2").css("background-size", "contain");
+          } else if(numArr[1] === '1'){
+            $("#num2").css("background-image", "url(抽奖软件UI/底色/金属/金属2.png)");
+            $("#result11").parent().children().children(".showNum").css("background-image", "url(抽奖软件UI/底色/金属/金属2.png)");
+            // $("#num2").css("background-size", "contain");
+          } else if(numArr[1] === '2'){
+            $("#num2").css("background-image", "url(抽奖软件UI/底色/复合/复合1.png)");
+            $("#result11").parent().children().children(".showNum").css("background-image", "url(抽奖软件UI/底色/复合/复合1.png)");
+            // $("#num2").css("background-size", "contain");
+          } else if(numArr[1] === '3'){
+            $("#num2").css("background-image", "url(抽奖软件UI/底色/复合/复合2.png)");
+            $("#result11").parent().children().children(".showNum").css("background-image", "url(抽奖软件UI/底色/复合/复合2.png)");
+            // $("#num2").css("background-size", "contain");
+          } else if(numArr[1] === '4'){
+            $("#num2").css("background-image", "url(抽奖软件UI/底色/非金/非金1.png)");
+            $("#result11").parent().children().children(".showNum").css("background-image", "url(抽奖软件UI/底色/非金/非金1.png)");
+            // $("#num2").css("background-size", "contain");
+          } else if(numArr[1] === '5'){
+            $("#num2").css("background-image", "url(抽奖软件UI/底色/非金/非金2.png)");
+            $("#result11").parent().children().children(".showNum").css("background-image", "url(抽奖软件UI/底色/非金/非金2.png)");
+            // $("#num2").css("background-size", "contain");
+          } else if(numArr[1] === '6'){
+            $("#num2").css("background-image", "url(抽奖软件UI/底色/高分子/高分子1.png)");
+            $("#result11").parent().children().children(".showNum").css("background-image", "url(抽奖软件UI/底色/高分子/高分子1.png)");
+            // $("#num2").css("background-size", "contain");
+          } else if(numArr[1] === '7'){
+            $("#num2").css("background-image", "url(抽奖软件UI/底色/高分子/高分子2.png)");
+            $("#result11").parent().children().children(".showNum").css("background-image", "url(抽奖软件UI/底色/高分子/高分子2.png)");
+            // $("#num2").css("background-size", "contain");
+          }
+          $("#num2").toggleClass("jumpDown");
+          pressTimes++;
         } else if(event.which === 32 && pressTimes === 3) {
           // 抽数字
-          // 生成最终卡片
+          $("#num3").children("img").attr("src", "抽奖软件UI/数字/"+numArr[2]+".png");
+          $(".prize1").attr("src", "抽奖软件UI/数字/"+numArr[2]+".png");
+          $("#num3").toggleClass("jumpDown");
+          pressTimes++;
         } else if(event.which === 32 && pressTimes === 4) {
+          // 生成最终卡片
+          $("#result11").parent().css("transform", "translateY(0px)");
+          $(".row").css("transform", "translateY(2500px)");
+          $("#bg0").parent().parent().css("transform", "translateY(-1000px)");
+          $("#bond0").parent().parent().css("transform", "translateY(-1000px) rotateZ(45deg)");
+          $("#card0").parent().parent().css("transform", "translateY(-1000px) ");
+          pressTimes++;
+        } else if(event.which === 32 && pressTimes === 5) {
           // 清空，重置
+          $("#num1").toggleClass("jumpDown");
+          $("#num2").toggleClass("jumpDown");
+          $("#num3").toggleClass("jumpDown");
+          numArr = getRandomNum(usedArr, config[0], config[1], config[2]);
+          toggleExpand()
           toggleFirstPrize();
           pressTimes = 0;
         }
       } else if(prize === 0){
         if(event.which === 32 && pressTimes === 0){
-          // 开始闪动
+          // 扩张，出现卡池
+          toggleExpand();
+          $(".row").css("transform", "translateY(0px)");
+          $("#bg0").parent().parent().css("transform", "translateY(-100px) translateZ(-500px)");
+          $("#bond0").parent().parent().css("transform", "translateY(-100px) translateZ(-500px) rotateZ(45deg)");
+          $("#card0").parent().parent().css("transform", "translateY(-100px) translateZ(-760px)");
           pressTimes++;
         } else if(event.which === 32 && pressTimes === 1){
-          // 抽出全部
+          // 抽键合
           pressTimes++;
         } else if(event.which === 32 && pressTimes === 2){
+          // 抽背底
+          pressTimes++;
+        } else if(event.which === 32 && pressTimes === 3){
+          // 抽数字
+          pressTimes++;
+        } else if(event.which === 32 && pressTimes === 4){
+          // 最终卡片
+          pressTimes++;
+        } else if(event.which === 32 && pressTimes === 5){
           // 清空，重置
           toggleSpecialPrize();
           pressTimes = 0;

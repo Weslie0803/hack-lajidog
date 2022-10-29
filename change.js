@@ -36,10 +36,11 @@ var toggleSecondPrize = function() {
 var toggleFirstPrize = function() {
     $(".NumRolling").children("img").css("display", "none");
     $(".NumRolling").children("ul").css("display", "inherit");
-    $(".row").css("display", "none");
+    $(".row").css("transform", "translateY(2500px)");
     $("#result1").parent().css("transform", "translateY(2500px)");
     // $("#result").css("display", "none");
     $("#bg0").parent().parent().css("transform", "translateY(0px) translateZ(-250px)");
     $("#bond0").parent().parent().css("transform", "translateY(0px) translateZ(-250px) rotateZ(45deg)");
     $("#card0").parent().parent().css("transform", "translateY(0px) translateZ(-380px)");
+    $("#result11").parent().css("transform", "translateY(2250px)");
 }
