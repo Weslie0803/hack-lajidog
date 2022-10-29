@@ -1,5 +1,5 @@
 var toggleThirdPrize = function () {
-    $(".row").css("display", "none");
+    $(".row").css("transform", "translateY(2500px)");
     $("#result").parent().css("transform", "translateY(2500px)");
     // $("#result").css("display", "none");
     $("#bg0").parent().parent().css("transform", "translateY(0px) translateZ(-250px)");
@@ -25,7 +25,7 @@ var toggleResult = function(num){
 var toggleSecondPrize = function() {
     $(".NumRolling").children("img").css("display", "none");
     $(".NumRolling").children("ul").css("display", "inherit");
-    $(".row").css("display", "none");
+    $(".row").css("transform", "translateY(2500px)");
     $("#result1").parent().css("transform", "translateY(2500px)");
     // $("#result").css("display", "none");
     $("#bg0").parent().parent().css("transform", "translateY(0px) translateZ(-250px)");
