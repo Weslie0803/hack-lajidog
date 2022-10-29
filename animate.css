@@ -223,6 +223,17 @@
     animation: BondFlash 3s linear infinite;
 }
 
+#result0 {
+    margin: auto;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
+    width: 320px;
+    height: 580px;
+}
 #result {
     margin: auto;
     transition: transform 2s;
@@ -303,6 +314,16 @@ img.prize1 {
     max-width: 150px;
     max-height: 150px;
 }
+img.prize0 {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
+    max-width: 150px;
+    max-height: 150px;
+}
 
 .bondbg {
     background-color: hsla(0,0%,100%,.6); 
@@ -348,13 +369,13 @@ img.prize1 {
 }
 
 .ring8>.plane {
-    height: 150px;
-    width: 150px
+    height: 100px;
+    width: 100px
 }
 
 .ring82>.plane {
-    height: 150px;
-    width: 150px
+    height: 100px;
+    width: 100px
 }
 
 .col-xs-4>.showNum {
@@ -389,4 +410,29 @@ img.prize1 {
     right:0;
     top: 0;
     bottom: 0;
+}
+#bb0 {
+    max-width: 100px;
+    max-height: 100px;
+    /* display: block; */
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
+}
+
+.backnum {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
+    width: 140px;
+    height: 220px;
+    background-color: hsla(0,0%,100%,.5);
+    /* border: 1px solid #fff; */
+    border-radius: 100%;
 }

@@ -24,28 +24,28 @@
 }
 
 .ring82>.eine {
-    transform: translateZ(350px);
+    transform: translateZ(400px);
 }
 .ring82>.zwei {
-    transform: rotateY(45deg) translateZ(350px);
+    transform: rotateY(45deg) translateZ(400px);
 }
 .ring82>.drei {
-    transform: rotateY(90deg) translateZ(350px);
+    transform: rotateY(90deg) translateZ(400px);
 }
 .ring82>.viel {
-    transform: rotateY(135deg) translateZ(350px);
+    transform: rotateY(135deg) translateZ(400px);
 }
 .ring82>.funf {
-    transform: rotateY(180deg) translateZ(350px);
+    transform: rotateY(180deg) translateZ(400px);
 }
 .ring82>.sechs {
-    transform: rotateY(225deg) translateZ(350px);
+    transform: rotateY(225deg) translateZ(400px);
 }
 .ring82>.seben {
-    transform: rotateY(270deg) translateZ(350px);
+    transform: rotateY(270deg) translateZ(400px);
 }
 .ring82>.acht {
-    transform: rotateY(315deg) translateZ(350px);
+    transform: rotateY(315deg) translateZ(400px);
 }
 
 .ring8card>.plane img {

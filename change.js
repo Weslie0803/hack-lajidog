@@ -24,6 +24,7 @@ var toggleResult = function(num){
 
 var toggleSecondPrize = function() {
     $(".NumRolling").children("img").css("display", "none");
+    $(".NumRolling").children(".backnum").css("display", "none");
     $(".NumRolling").children("ul").css("display", "inherit");
     $(".row").css("transform", "translateY(2500px)");
     $("#result1").parent().css("transform", "translateY(2500px)");
@@ -43,4 +44,29 @@ var toggleFirstPrize = function() {
     $("#bond0").parent().parent().css("transform", "translateY(0px) translateZ(-250px) rotateZ(45deg)");
     $("#card0").parent().parent().css("transform", "translateY(0px) translateZ(-380px)");
     $("#result11").parent().css("transform", "translateY(2250px)");
+    $("#result0").parent().css("transform", "translateY(2250px)");
+    $("#num1").children("ul").css("display", "inherit");
+    $("#num1").children("img").css("display", "none");
+    // 清空row
+    $("#num1").children("ul").children("li").children("img").attr("src", "");
+    $("#num2").css("background-image","");
+    $("#num3").children("img").attr("src","");
+}
+var toggleSpecialPrize = function() {
+    $(".NumRolling").children("img").css("display", "none");
+    $(".NumRolling").children("ul").css("display", "inherit");
+    $(".row").css("transform", "translateY(2500px)");
+    $("#result1").parent().css("transform", "translateY(2500px)");
+    // $("#result").css("display", "none");
+    $("#bg0").parent().parent().css("transform", "translateY(0px) translateZ(-250px)");
+    $("#bond0").parent().parent().css("transform", "translateY(0px) translateZ(-250px) rotateZ(45deg)");
+    $("#card0").parent().parent().css("transform", "translateY(0px) translateZ(-380px)");
+    $("#result11").parent().css("transform", "translateY(2250px)");
+    $("#result0").parent().css("transform", "translateY(2250px)");
+    $("#num1").children("img").css("display", "inherit");
+    $("#num1").children("ul").css("display", "none");
+    // 清空row
+    $("#num1").children("img").attr("src", "");
+    $("#num2").css("background-image","");
+    $("#num3").children("img").attr("src","");
 }

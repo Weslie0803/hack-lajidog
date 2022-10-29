@@ -160,8 +160,18 @@ body {
     right:0;
     top: 0;
     bottom: 0;
-    max-width: 80px;
-    max-height: 80px;
+    max-width: 50px;
+    max-height: 50px;
+}
+.ring82>.plane img{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
+    max-width: 50px;
+    max-height: 50px;
 }
 
 #shape.backfaces .plane {
