@@ -24,6 +24,7 @@
     height: 580px;
 }
 .NumRolling>ul li {
+    position: relative;
     list-style-type: none;
     float: left;
     width: 290px;
@@ -40,15 +41,14 @@
     height: 100%;
 }
 .NumRolling>ul li img{
-    width: 50%;
-    height: 50%;
+    max-width: 150px;
+    max-height: 150px;
     margin: auto;
-    margin-top: 30%;
-    text-align: center;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 .BondRolling>ul li img{
     max-width: 50px;
@@ -72,7 +72,7 @@
     padding-left: 0px ;
 }
 .NumRolling>ul {
-    /* animation: runX 3s linear infinite; */
+    animation: runX 3s linear infinite;
     padding-left: 0px ;
     width: 3190px;
 }
@@ -234,6 +234,22 @@
     width: 320px;
     height: 580px;
 }
+#result1 {
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    left: -10px;
+    width: 320px;
+    height: 580px;
+    position: absolute;
+}
+#result2 {
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    right: -10px;
+    width: 320px;
+    height: 580px;
+    position: absolute;
+}
 
 #result>.CardUndefined>img {
     position: absolute;
@@ -244,4 +260,47 @@
     bottom: 0;
     max-width: 150px;
     max-height: 150px;
+}
+
+.bondbg {
+    background-color: hsla(0,0%,100%,.6); 
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+.bondbg2 {
+    background-color: transparent; 
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.lefttop {
+    left: 40px;
+    top: 40px;
+}
+.rightbottom {
+    right: 40px;
+    bottom: 40px;
+}
+
+.centerNum {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.ring8>.plane {
+    height: 150px;
+    width: 150px
+}
+
+.ring82>.plane {
+    height: 150px;
+    width: 150px
 }

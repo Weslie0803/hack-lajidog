@@ -216,22 +216,72 @@ $(document).ready(function () {
           pressTimes = 0;
         }
       } else if(prize === 2){
-        if(event.which === 32 && pressTimes === 0){
+        if(pressTimes === 0){
           // 抽出家族
-          pressTimes ++;
+          if(event.which === 80){ // press P :高分子
+            $("#bg0").parent().parent().css("transform", "translateY(-1000px)");
+            $("#bond0").parent().parent().css("transform", "translateY(-1000px)");
+            $("#card0").parent().parent().css("transform", "translateY(-1000px)");
+            $("#result1").parent().css("transform", "translateY(0px)");
+            $("#2p1").css("background-image", "url(抽奖软件UI/底色/高分子/高分子1.png)");
+            $("#2p2").css("background-image", "url(抽奖软件UI/底色/高分子/高分子2.png)");
+            // $(".NumRolling").children("ul").children("li").children("img").css("filter", "drop-shadow(50px, 50px, #9d7a11)");
+            // $(".bondbg2").css("filter", "dropshadow(50px, 50px ,#9d7a11)");
+            pressTimes ++;
+          } else if(event.which === 77) { // press M: 金属
+            $("#bg0").parent().parent().css("transform", "translateY(-1000px)");
+            $("#bond0").parent().parent().css("transform", "translateY(-1000px)");
+            $("#card0").parent().parent().css("transform", "translateY(-1000px)");
+            $("#result1").parent().css("transform", "translateY(0px)");
+            $("#2p1").css("background-image", "url(抽奖软件UI/底色/金属/金属1.png)");
+            $("#2p2").css("background-image", "url(抽奖软件UI/底色/金属/金属2.png)");
+            pressTimes ++;
+          } else if(event.which === 78) { // press N: 非金
+            $("#bg0").parent().parent().css("transform", "translateY(-1000px)");
+            $("#bond0").parent().parent().css("transform", "translateY(-1000px)");
+            $("#card0").parent().parent().css("transform", "translateY(-1000px)");
+            $("#result1").parent().css("transform", "translateY(0px)");
+            $("#2p1").css("background-image", "url(抽奖软件UI/底色/非金/非金1.png)");
+            $("#2p2").css("background-image", "url(抽奖软件UI/底色/非金/非金2.png)");
+            pressTimes ++;
+          } else if(event.which === 67) { // press C: 复合
+            $("#bg0").parent().parent().css("transform", "translateY(-1000px)");
+            $("#bond0").parent().parent().css("transform", "translateY(-1000px)");
+            $("#card0").parent().parent().css("transform", "translateY(-1000px)");
+            $("#result1").parent().css("transform", "translateY(0px)");
+            $("#2p1").css("background-image", "url(抽奖软件UI/底色/复合/复合1.png)");
+            $("#2p2").css("background-image", "url(抽奖软件UI/底色/复合/复合2.png)");
+            pressTimes ++;
+          }
         } else if(event.which === 32 && pressTimes === 1) {
           // 抽出数字
+          $("#result1").toggleClass("jumpDown");
+          $("#result2").toggleClass("jumpDown");
+          $(".NumRolling").children("ul").css("display", "none");
+          $(".NumRolling").children("img").css("display", "inherit");
+          $(".NumRolling").children("img").attr("src", "抽奖软件UI/数字/"+numArr[2]+".png");
           pressTimes++;
         } else if(event.which === 32 && pressTimes === 2) {
           // 重置
+          $("#result1").toggleClass("jumpDown");
+          $("#result2").toggleClass("jumpDown");
+          clearNum(numArr);
+          numArr = getRandomNum(usedArr, config[0], config[1], config[2]);
           toggleSecondPrize();
           pressTimes = 0;
         }
       } else if(prize === 1){
         if(event.which === 32 && pressTimes === 0){
-          // 一分为四
+          // 扩张，出现卡池
           pressTimes++;
         } else if(event.which === 32 && pressTimes === 1) {
+          // 抽键合奇偶
+        } else if(event.which === 32 && pressTimes === 2) {
+          // 抽底色
+        } else if(event.which === 32 && pressTimes === 3) {
+          // 抽数字
+          // 生成最终卡片
+        } else if(event.which === 32 && pressTimes === 4) {
           // 清空，重置
           toggleFirstPrize();
           pressTimes = 0;

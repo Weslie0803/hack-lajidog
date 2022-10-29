@@ -153,6 +153,16 @@ body {
     max-width: 100px;
     max-height: 100px;
 }
+.ring8>.plane img{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
+    max-width: 80px;
+    max-height: 80px;
+}
 
 #shape.backfaces .plane {
     backface-visibility: visible
